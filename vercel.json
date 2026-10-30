@@ -4,7 +4,7 @@
   "framework": "vite",
   "rewrites": [
     {
-      "source": "/((?!assets/|.*\\.(?:ico|png|svg|jpg|jpeg|gif|webp|mp4|webm|pdf|json|js|css|woff2|woff|ttf|map)).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
@@ -23,28 +23,19 @@
       ]
     },
     {
-      "source": "/(.*)\\.(?:png|jpg|jpeg|svg|webp|ico|gif)",
+      "source": "/(.*)",
       "headers": [
         {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
         },
         {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ]
-    },
-    {
-      "source": "/(.*)\\.mp4",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400, stale-while-revalidate=604800"
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
         },
         {
-          "key": "Accept-Ranges",
-          "value": "bytes"
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
         }
       ]
     }
