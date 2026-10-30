@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Remix Remix Loqelo Pre-Launch Landing Page",
+  "description": "A minimalist website showcasing Loqelo services with waitlist sign-up forms for future customers and service providers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

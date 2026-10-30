@@ -1,0 +1,353 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Bebas Neue', 'Oswald', -apple-system, sans-serif;
+  --font-heading: 'Oswald', 'Bebas Neue', -apple-system, sans-serif;
+  --font-script: 'Dancing Script', 'Caveat', cursive;
+  --font-sans: 'DM Sans', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Elite Outdoor Solution Brand Palette */
+  --color-elite-forest: #16572E;
+  --color-elite-forest-dark: #0F3E20;
+  --color-elite-forest-light: #1E753E;
+  --color-elite-lime: #84CC16;
+  --color-elite-lime-dark: #65A30D;
+  --color-elite-lime-light: #A3E635;
+  --color-elite-cream: #F2F7EE;
+  --color-elite-sand: #FAFDF7;
+  --color-elite-charcoal: #1C2A20;
+  --color-elite-muted: #5D7163;
+  --color-elite-line: #E2ECE0;
+}
+
+:root {
+  --font-display: 'Bebas Neue', 'Oswald', sans-serif;
+  --font-script: 'Dancing Script', 'Caveat', cursive;
+  --font-dmsans: 'DM Sans', sans-serif;
+}
+
+body {
+  font-family: var(--font-dmsans);
+  color: #1C2A20;
+  background-color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Vertical Outlined Decorative Headline Typography (e.g. ABOUT US, CONTACT US) */
+.text-outline-lime {
+  -webkit-text-stroke: 1.75px #84CC16;
+  color: transparent;
+  user-select: none;
+}
+
+.text-outline-forest {
+  -webkit-text-stroke: 1.75px #16572E;
+  color: transparent;
+  user-select: none;
+}
+
+.writing-mode-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Speech Bubble Tail for Testimonials */
+.speech-bubble {
+  position: relative;
+}
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 36px;
+  width: 0;
+  height: 0;
+  border-width: 16px 16px 0 0;
+  border-style: solid;
+  border-color: #FFFFFF transparent transparent transparent;
+}
+.speech-bubble-border::before {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: 35px;
+  width: 0;
+  height: 0;
+  border-width: 18px 18px 0 0;
+  border-style: solid;
+  border-color: #E2ECE0 transparent transparent transparent;
+}
+
+/* Theme Variation Styling */
+.theme-nordic-warm {
+  --font-heading: 'Playfair Display', serif;
+  background-color: #FAF8F5 !important;
+}
+.theme-nordic-warm h1,
+.theme-nordic-warm h2,
+.theme-nordic-warm h3,
+.theme-nordic-warm .font-display {
+  font-family: var(--font-playfair), Georgia, serif !important;
+  letter-spacing: -0.01em;
+}
+
+.theme-elite-green {
+  --font-heading: 'Oswald', sans-serif;
+  background-color: #FAFDF7 !important;
+  color: #1C2A20 !important;
+}
+.theme-elite-green h1,
+.theme-elite-green h2,
+.theme-elite-green h3,
+.theme-elite-green .font-display {
+  font-family: 'Oswald', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.theme-emerald-tech {
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  background-color: #F1F6F5 !important;
+}
+.theme-emerald-tech h1,
+.theme-emerald-tech h2,
+.theme-emerald-tech h3,
+.theme-emerald-tech .font-display {
+  font-family: var(--font-jakarta), sans-serif !important;
+  letter-spacing: -0.03em;
+}
+
+.theme-dark-stealth {
+  background-color: #071317 !important;
+  color: #E6F3F5 !important;
+}
+.theme-dark-stealth h1,
+.theme-dark-stealth h2,
+.theme-dark-stealth h3,
+.theme-dark-stealth h4,
+.theme-dark-stealth .font-display {
+  color: #F0FBFC !important;
+}
+.theme-dark-stealth section {
+  background-color: transparent !important;
+  border-color: #1A3842 !important;
+}
+.theme-dark-stealth .bg-white {
+  background-color: #0D2228 !important;
+  border-color: #1A3842 !important;
+  color: #E6F3F5 !important;
+}
+.theme-dark-stealth .bg-\[\#F4F7F6\] {
+  background-color: #071317 !important;
+}
+.theme-dark-stealth .bg-\[\#FAFBFB\] {
+  background-color: #0A1B20 !important;
+  border-color: #1A3842 !important;
+}
+.theme-dark-stealth .border-\[\#E4EAE9\],
+.theme-dark-stealth .border-\[\#DCE4E3\] {
+  border-color: #1A3842 !important;
+}
+.theme-dark-stealth .text-\[\#0C2229\] {
+  color: #F0FBFC !important;
+}
+.theme-dark-stealth .text-\[\#3D5259\],
+.theme-dark-stealth .text-\[\#5E7379\] {
+  color: #8DA8B0 !important;
+}
+.theme-dark-stealth .text-\[\#76898E\] {
+  color: #6C8B94 !important;
+}
+.theme-dark-stealth header {
+  background-color: rgba(7, 19, 23, 0.9) !important;
+  border-color: #1A3842 !important;
+}
+
+/* Tabular figures for pricing, metrics, and countdown */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Clean scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F7F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Razor-sharp image and vector rendering for high-DPI/Retina screens across all deployments */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
+}
+
+svg {
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+}
+
+/* ------------------------------------------------------------- */
+/* RICH WEBSITE ANIMATIONS & KEYFRAMES                           */
+/* ------------------------------------------------------------- */
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(1deg);
+  }
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(132, 204, 22, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(132, 204, 22, 0);
+  }
+}
+
+@keyframes grass-sway {
+  0%, 100% {
+    transform: skewX(0deg);
+  }
+  50% {
+    transform: skewX(-2deg);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-float {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 5s ease-in-out 1.5s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-radar-pulse {
+  animation: radar-pulse 3s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+.animate-grass-sway {
+  transform-origin: bottom center;
+  animation: grass-sway 6s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer-sweep 2.5s infinite;
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Glassmorphic glow */
+.glass-glow {
+  box-shadow: 0 8px 32px 0 rgba(22, 87, 46, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@keyframes radar-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-sweep {
+  transform-origin: center center;
+  animation: radar-sweep 6s linear infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+
+
